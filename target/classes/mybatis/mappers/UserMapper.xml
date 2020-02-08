@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgx.dao.UserMapper">
+    <select id="loginPage" parameterType="com.lgx.entity.User" resultType="java.util.Map">
+        SELECT * FROM user WHERE username=#{username} and password=#{password}
+    </select>
+    <insert id="insertUser" parameterType="com.lgx.entity.User">
+        INSERT INTO user (id,username,password,gender,email) VALUES (#{id},#{username},#{password},#{gender},#{email})
+    </insert>
+</mapper>
